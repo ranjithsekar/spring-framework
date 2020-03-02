@@ -4,6 +4,9 @@
 package spring5mvc.collections;
 
 import org.junit.Test;
+
+import jbr.springmvc.Library;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
