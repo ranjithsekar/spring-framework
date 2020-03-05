@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
 	compile 'org.springframework:spring-webmvc:5.2.4.RELEASE'
+	compile 'org.projectlombok:lombok:1.18.12'
 	
 	compile 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
 	compile 'taglibs:standard:1.1.2'

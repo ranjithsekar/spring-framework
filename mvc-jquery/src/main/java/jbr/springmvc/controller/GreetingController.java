@@ -1,25 +1,32 @@
 package jbr.springmvc.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jbr.springmvc.model.Product;
+import jbr.springmvc.util.ProductUtil;
 
 @Controller
 public class GreetingController {
 
-	@RequestMapping(value = "/morning", method = RequestMethod.GET)
-	public String morning(Model model) {
-		model.addAttribute("message", "Good Morning!!!");
+  @GetMapping("/")
+  public String expandcollapse(Model model) {
+    List<List<Product>> productList = Arrays.asList(ProductUtil.mobiles(), ProductUtil.laptops(), ProductUtil.tablets(),
+        ProductUtil.televisions(), ProductUtil.washers());
+    model.addAttribute("productList", productList);
 
-		return "greeting";
-	}
+    return "expand-collapse";
+  }
 
-	@RequestMapping(value = "/evening", method = RequestMethod.GET)
-	public String evening(Model model) {
-		model.addAttribute("message", "Good Evening!!!");
+  @GetMapping({ "/welcome", "/hello" })
+  public String hello(Model model) {
+    model.addAttribute("message", "Hello. Welcome!!1");
 
-		return "greeting";
-	}
+    return "greeting";
+  }
 
 }
