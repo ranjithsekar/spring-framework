@@ -1,4 +1,4 @@
-package jbr.spring5mvc.demo;
+package jbr.springmvc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,16 +9,16 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "jbr.spring5mvc.demo" })
+@ComponentScan(basePackages = { "jbr.springmvc" })
 public class AppConfig {
 
-	@Bean
-	public InternalResourceViewResolver resolver() {
-		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setViewClass(JstlView.class);
-		resolver.setPrefix("/WEB-INF/views/");
-		resolver.setSuffix(".jsp");
+  @Bean
+  public InternalResourceViewResolver resolver() {
+    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+    resolver.setViewClass(JstlView.class);
+    resolver.setPrefix("/views/");
+    resolver.setSuffix(".jsp");
 
-		return resolver;
-	}
+    return resolver;
+  }
 }

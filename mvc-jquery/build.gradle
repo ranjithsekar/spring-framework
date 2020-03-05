@@ -8,7 +8,7 @@ targetCompatibility = '1.8'
 
 
 war {
-    baseName = 'mvc-gradle'
+    baseName = 'mvc-jquery'
     version = '1.0'
 }
 

@@ -1,4 +1,4 @@
-package jbr.spring5mvc.demo;
+package jbr.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
